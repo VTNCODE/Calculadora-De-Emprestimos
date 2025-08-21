@@ -22,6 +22,15 @@ public class Data {
         this.time = time;
     }
 
+    public Data(Double amount, Periodo interestPeriod, Double interest, Double contribution, Periodo timePeriod, Integer time) {
+        this.amount = amount;
+        this.interestPeriod = interestPeriod;
+        this.interest = interest;
+        this.contribution = contribution;
+        this.timePeriod = timePeriod;
+        this.time = time;
+    }
+
     public Double getAmount() {
         return amount;
     }
