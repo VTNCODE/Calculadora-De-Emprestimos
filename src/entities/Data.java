@@ -6,11 +6,13 @@ public class Data {
     private Double amount;
     private Periodo interestPeriod;
     private Double interest;
+    private Double contribution;
     private Periodo timePeriod;
     private Integer time;
 
     public Data() {
     }
+
 
     public Data(Double amount, Periodo interestPeriod, Double interest, Periodo timePeriod, Integer time) {
         this.amount = amount;
