@@ -1,6 +1,7 @@
 package application;
 
-import services.Periodo;
+
+import entities.Data;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -25,7 +26,12 @@ public class Program {
         if (ansawer == 's' || ansawer =='S') {
             System.out.print("informe o aporte mensal: ");
             double monthlyContribution = sc.nextDouble();
+            System.out.print("O período será mensal ou anual? (MENSAL/ANUAL) ");
+            sc.next();
+            contributionPeriod = sc.nextLine();
+
         }
+
         System.out.print("O período será mensal ou anual? (MENSAL/ANUAL) ");
         sc.next();
         contributionPeriod = sc.nextLine();
