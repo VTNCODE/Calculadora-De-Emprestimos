@@ -15,7 +15,7 @@ public class BrazilBank extends InterestRate implements BankService{
 
     @Override
     public double contributionInterestRate(double amount, double interestRate, int timeInMonths, double contribution) {
-        return amount * Math.pow(1 + (interestRate/100), (timeInMonths + contribution * Math.pow(1 + interestRate, (timeInMonths -1))));
+        return amount * Math.pow(1 + (interestRate/100), timeInMonths) + contribution * ((Math.pow(1 + (interestRate/100), timeInMonths) - 1) / (interestRate/100));
     }
 
 
