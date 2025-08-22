@@ -55,4 +55,18 @@ public class ProcessData {
             }
         }
     }
+    public double totalInvest(double amount, int time, Periodo periodo) {
+        if (periodo == Periodo.ANUAL) {
+            return time * 12 * amount + amount;
+        }
+        else {
+            return time * amount + amount;
+        }
+    }
+    public double totalInterestWithContribution(double total, double amount, int time, Periodo periodo) {
+        return total - totalInvest(amount, time, periodo);
+    }
+    public double totalInterestWithoutContribution(double total, double amount) {
+        return total - amount;
+    }
 }
