@@ -70,4 +70,12 @@ public class Data {
     public void setTime(Integer time) {
         this.time = time;
     }
+
+    public Double getContribution() {
+        return contribution;
+    }
+
+    public void setContribution(Double contribution) {
+        this.contribution = contribution;
+    }
 }
