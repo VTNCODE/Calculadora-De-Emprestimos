@@ -2,7 +2,6 @@ package application;
 
 
 import entities.Data;
-import services.BankService;
 import services.BrazilBank;
 import services.Periodo;
 import services.ProcessData;
@@ -21,10 +20,10 @@ public class Program {
         System.out.println();
         System.out.print("Informe a quantida que deseja começar: ");
         double amount = sc.nextDouble();
-        System.out.print("Informe a taxa de juros: ");
-        double interestRate = sc.nextDouble();
         System.out.print("O juros será mensal ou anual? (MENSAL/ANUAL) ");
         interestPeriod = sc.next().toUpperCase();
+        System.out.print("Informe a taxa de juros: ");
+        double interestRate = sc.nextDouble();
         System.out.print("Deseja colocar um aporte mensal? (s/n): ");
         char ansawer = sc.next().charAt(0);
         if (ansawer == 's' || ansawer =='S') {
