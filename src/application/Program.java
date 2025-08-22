@@ -16,7 +16,7 @@ public class Program {
         String interestPeriod, contributionPeriod;
 
 
-        System.out.println("----------CALCULADORA DE EMPRÉSTIMOS BANCARIOS----------");
+        System.out.println("----------CALCULADORA DE JUROS COMPOSTOS---------");
         System.out.println();
         System.out.print("Informe a quantida que deseja começar: ");
         double amount = sc.nextDouble();
@@ -35,6 +35,10 @@ public class Program {
             int time = sc.nextInt();
             Data data = new Data(amount, Periodo.valueOf(interestPeriod), interestRate, monthlyContribution, Periodo.valueOf(contributionPeriod), time);
             ProcessData processData = new ProcessData(new BrazilBank());
+            double total = processData.processContractWithContribution(data);
+            double totalInterest = processData.totalInterestWithContribution(total, amount, time, Periodo.valueOf(contributionPeriod));
+            System.out.println("Total investido: " + String.format("%.2f ",  + processData.totalInvest(amount, time, Periodo.valueOf(contributionPeriod))));
+            System.out.println("Total ganho de juros: " + String.format("%.2f ", totalInterest));
             System.out.println("Total: " + String.format("%.2f", processData.processContractWithContribution(data)));
 
         }
@@ -45,6 +49,10 @@ public class Program {
             int time = sc.nextInt();
             Data data = new Data(amount, Periodo.valueOf(interestPeriod), interestRate, Periodo.valueOf(contributionPeriod), time);
             ProcessData processData = new ProcessData(new BrazilBank());
+            double total = processData.processContractWithoutContribution(data);
+            double totalInterest = processData.totalInterestWithoutContribution(total, amount);
+            System.out.println("Total investido: " + String.format("%.2f ",  + amount));
+            System.out.println("Total ganho de juros: " + String.format("%.2f ", totalInterest));
             System.out.println("Total: " + String.format("%.2f", processData.processContractWithoutContribution(data)));
 
         }
