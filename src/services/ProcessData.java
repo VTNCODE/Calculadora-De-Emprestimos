@@ -9,10 +9,7 @@ public class ProcessData {
         this.service = service;
     }
     public double processContract(Data values) {
-
         return 1;
-
-
     }
 
 }

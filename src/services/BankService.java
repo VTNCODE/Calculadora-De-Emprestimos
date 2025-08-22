@@ -1,8 +1,9 @@
 package services;
 
 public interface BankService {
-    double monthlyInterestRate(double amount, double interestRate, int timeInMonths);
-    double annualInterestRate(double amount, double interestRate, int timeInYears);
+    double interestRate(double amount, double interestRate, int timeInMonths);
+    double contributionInterestRate(double amount, double interestRate, int timeInMonths, double contribution);
+
 
 
 }
