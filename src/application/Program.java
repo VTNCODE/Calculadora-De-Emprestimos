@@ -37,7 +37,7 @@ public class Program {
             ProcessData processData = new ProcessData(new BrazilBank());
             double total = processData.processContractWithContribution(data);
             double totalInvest = processData.totalInvest(amount, monthlyContribution, time,Periodo.valueOf(contributionPeriod));
-            double totalInterest = processData.totalInterestWithoutContribution(total, totalInvest);
+            double totalInterest = processData.totalInterest(total, totalInvest);
             System.out.println("Total investido: " + String.format("%.2f ",  + totalInvest));
             System.out.println("Total ganho de juros: " + String.format("%.2f ", totalInterest));
             System.out.println("Total: " + String.format("%.2f", processData.processContractWithContribution(data)));
@@ -51,7 +51,7 @@ public class Program {
             Data data = new Data(amount, Periodo.valueOf(interestPeriod), interestRate, Periodo.valueOf(contributionPeriod), time);
             ProcessData processData = new ProcessData(new BrazilBank());
             double total = processData.processContractWithoutContribution(data);
-            double totalInterest = processData.totalInterestWithoutContribution(total, amount);
+            double totalInterest = processData.totalInterest(total, amount);
             System.out.println("Total investido: " + String.format("%.2f ",  + amount));
             System.out.println("Total ganho de juros: " + String.format("%.2f ", totalInterest));
             System.out.println("Total: " + String.format("%.2f", processData.processContractWithoutContribution(data)));

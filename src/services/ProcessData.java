@@ -64,7 +64,7 @@ public class ProcessData {
         }
     }
 
-    public double totalInterestWithoutContribution(double total, double amount) {
+    public double totalInterest(double total, double amount) {
         return total - amount;
     }
 }
